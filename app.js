@@ -8,12 +8,12 @@ app.use('/public', express.static('public'))
 app.set('view engine', 'ejs')
 
 app.get('/map-data', async (req, res) => {
-	let addressData = await geoCode('Central, Singapore');
+	const addressData = await geoCode('Central, Singapore');
 	let mapData = {
 		center: addressData.data.features[0].center,
 		bbox: addressData.data.features[0].bbox,
-		countries: addressData.data.features[0].properties.short_code,
-		region: addressData.data.features[0].context[0].text,
+		countries: addressData.data.features[0].context[0].short_code,
+		region: addressData.data.features[0].text,
 	};
 
 	// Generatre random points within map
