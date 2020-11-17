@@ -144,6 +144,11 @@ const drawMap = async mapData => {
             accessToken: mapboxgl.accessToken,
             // limit results to Singapore
             countries,
+            marker: {
+                color: 'orange'
+            },
+
+            zoom: 10.9,
 
             // further limit results to the geographic bounds representing the region of
             // Centeral Singapore region

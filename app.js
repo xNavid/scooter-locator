@@ -17,7 +17,7 @@ app.get('/map-data', async (req, res) => {
 	};
 
 	// Generatre random points within map
-	const randomPoints = await generateRandomPointsOnMap(10, addressData.data.features[0].bbox);
+	const randomPoints = await generateRandomPointsOnMap(50, addressData.data.features[0].bbox);
 
 	// Add random points to map data
 	mapData.points = randomPoints;
